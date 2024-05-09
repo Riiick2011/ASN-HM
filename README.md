@@ -1,6 +1,6 @@
 #Online Spatio-Temporal Action Detection with Adaptive Sampling and Hierarchical Modulation
 
-## Overview of TAN
+## Overview of ASN-HM
 ![image](./img_files/ASN-HM.png)
 
 
