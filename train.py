@@ -24,7 +24,7 @@ cv2.ocl.setUseOpenCL(False)
 torch.autograd.set_detect_anomaly(True)
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='TAN')
+    parser = argparse.ArgumentParser(description='ASN')
     # CUDA
     parser.add_argument('--cuda', action='store_true', default=False,
                         help='use cuda.')
@@ -46,8 +46,8 @@ def parse_args():
                         help='gradient accumulate.')  # 当增大单卡bs时候，应该减少accu  默认是 单卡bs8xaccu16=bs128
 
     # Model
-    parser.add_argument('-v', '--version', default='tan_large', type=str,
-                        help='build TAN')
+    parser.add_argument('-v', '--version', default='asn', type=str,
+                        help='build ASN')
     parser.add_argument('-r', '--resume', default=None, type=str,
                         help='keep training')  # 恢复训练机制，模型恢复完整路径
     parser.add_argument('-K', '--len_clip', default=16, type=int,

@@ -16,7 +16,7 @@ activation = None
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='TAN')
+    parser = argparse.ArgumentParser(description='ASN')
     # CUDA
     parser.add_argument('--cuda', action='store_true', default=False,
                         help='use cuda.')
@@ -38,8 +38,8 @@ def parse_args():
                         help='gradient accumulate.')  # 当增大单卡bs时候，应该减少accu  默认是 单卡bs8xaccu16=bs128
 
     # Model
-    parser.add_argument('-v', '--version', default='tan_large', type=str,
-                        help='build TAN')
+    parser.add_argument('-v', '--version', default='asn', type=str,
+                        help='build ASN')
     parser.add_argument('-r', '--resume', default=None, type=str,
                         help='keep training')  # 恢复训练机制，模型恢复完整路径
     parser.add_argument('-K', '--len_clip', default=16, type=int,
@@ -205,7 +205,7 @@ if __name__ == '__main__':
         import numpy as np
 
         frame_dir = '/media/su/d/datasets/UCF24-YOWO/rgb-images/Skiing/v_Skiing_g01_c02/00001.jpg'
-        save_path = '/home/su/TAN/results/'
+        save_path = '/home/su/ASN/results/'
         index = int(frame_dir[-9:-4])
 
         # 1. 使用 OpenCV 读取原始图像

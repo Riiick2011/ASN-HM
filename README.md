@@ -37,23 +37,30 @@ Link: https://pan.baidu.com/s/11GZvbV0oAzBhNDVKXsVGKg
 
 Password: hmu6 
 
-## Train TAN
+## Train ASN-HM
 * UCF101-24
 
 For example:
 
 ```Shell
-python -m torch.distributed.launch --nnodes 1 --nproc_per_node 2 train.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -bs 32 -tbs 16 -K 16 -accu 8 -v yowo_v3_large --max_epoch 7 --lr_epoch 2 3 4 5 --eval -ct 0.05 --distributed --sybn (--resume weights/ucf24/yowo_v3_large/yowo_v3_large_epoch_1.pth) (--untrimmed_trainning) (--track_mode)
+python -m torch.distributed.launch --nnodes 1 --nproc_per_node 2 train.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -bs 32 -tbs 16 -K 16 -accu 8 -v asn --max_epoch 7 --lr_epoch 2 3 4 5 --eval -ct 0.05 --distributed --sybn (--resume weights/ucf24/asn/asn_epoch_1.pth) 
 ```
 
-##  Test TAN
+##  Test ASN-HM
 * Frame-mAP：
 
 ```Shell
-python eval.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -tbs 16 -v tan_large --weight weights/ucf24/tan_large/tan_large_epoch_0.pth -ct 0.05 --cal_frame_mAP
+python eval.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -tbs 16 -v asn --weight weights/ucf24/asn/asn_epoch_0.pth -ct 0.05 --cal_frame_mAP
 ```
 * Video mAP：
 
 ```Shell
-python eval.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -tbs 16 -v tan_large --weight weights/ucf24/tan_large/tan_large_epoch_0.pth -ct 0.05 --cal_video_mAP --link_method viterbi
+python eval.py --cuda -d ucf24 --data_root /data1/su/datasets/UCF24-YOWO/ -tbs 16 -v asn --weight weights/ucf24/asn/asn_epoch_0.pth -ct 0.05 --cal_video_mAP --link_method mchl
 ```
+## Note
+Model weights and detection results can be downloaded from the cloud drive link below.
+
+Link: https://pan.baidu.com/s/1iacp0hSeR0wD_lAS721Jjg?pwd=1xkq 
+password：1xkq 
+
+Currently, only part of the code is released. The complete code will be released after the paper is accepted.

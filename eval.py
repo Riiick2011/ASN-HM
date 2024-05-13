@@ -21,7 +21,7 @@ from models import build_model
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='TAN')
+    parser = argparse.ArgumentParser(description='ASN')
     # CUDA
     parser.add_argument('--cuda', action='store_true', default=False,
                         help='use cuda.')
@@ -37,8 +37,8 @@ def parse_args():
                         help='total test batch size')
 
     # model
-    parser.add_argument('-v', '--version', default='tan_large', type=str,
-                        help='build TAN')
+    parser.add_argument('-v', '--version', default='asn', type=str,
+                        help='build ASN')
     parser.add_argument('--weight', default=None,
                         type=str, help='Trained state_dict file path to open')  # 训练好的模型文件完整路径
     parser.add_argument('-K', '--len_clip', default=16, type=int,
