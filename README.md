@@ -7,12 +7,12 @@
 ## Requirements
 - We recommend you to use Anaconda to create a conda environment:
 ```Shell
-conda create -n tan python=3.6
+conda create -n asn-hm python=3.6
 ```
 
 - Then, activate the environment:
 ```Shell
-conda activate tan
+conda activate asn-hm 
 ```
 
 - Requirements:
