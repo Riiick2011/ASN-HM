@@ -20,7 +20,26 @@ conda activate tan
 pip install -r requirements.txt 
 ```
 
-## Visualization
+## Visualization on UCF24
+![image](./img_files/ASN-HM_00050.jpg)
+![image](./img_files/ASN-HM_00055.jpg)
+![image](./img_files/ASN-HM_00060.jpg)
+![image](./img_files/ASN-HM_00065.jpg)
+![image](./img_files/ASN-HM_00070.jpg)
+
+![image](./img_files/ASN-HM_00265.jpg)
+![image](./img_files/ASN-HM_00270.jpg)
+![image](./img_files/ASN-HM_00275.jpg)
+![image](./img_files/ASN-HM_00280.jpg)
+![image](./img_files/ASN-HM_00285.jpg)
+
+# Experiment
+
+|      Dataset    |  Sampling   | F-mAP | V-mAP |   FPS   | 
+|-----------|--------|--------|-------|-------|
+| JHMDB21   |   16xδ    | 78.6  | 86.5 |   32    | 
+|  UCF24  |   16xδ   |  87.2  | 58.3  |   32    | 
+
 
 # Dataset
 
